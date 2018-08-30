@@ -1,4 +1,4 @@
-# Bem-vindo ao teste IOS da CINQ!
+# Bem-vindo ao teste IOS da LUAN!
 
 Aqui, iremos avaliar suas capacidades técnicas referentes à vaga a qual você se candidatou.
 
