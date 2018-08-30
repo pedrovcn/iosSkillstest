@@ -10,10 +10,10 @@ Os requisitos mínimos/esperados para a entrega do desafio estão listados abaix
 	1 - Desenvolver uma aplicação utilizando os seguintes padrões:
 		 CoreData, Realm ou Sqllite
 		 Conexão HTTP - REST
-                 Swift 3+ ou Objective-C
-                 iOS 9+
-                 Device Compatibility: iPhone 4s+ 
-                 Storyboards
+             Swift 3+ ou Objective-C
+             iOS 9+
+             Device Compatibility: iPhone 4s+ 
+             Storyboards
 		
 	2 - Desenvolver uma tela onde seja possível realizar o Login, contendo os seguintes campos:
 		 E-mail
