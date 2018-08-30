@@ -3,7 +3,8 @@
 Aqui, iremos avaliar suas capacidades técnicas referentes à vaga a qual você se candidatou.
 
 A premissa deste teste é desenvolver um aplicativo onde seja possível realizar um cadastro de usuário, informando E-mail e Senha, e a partir deste cadastro, ser possível entrar na aplicação, realizando um processo de Autenticação.
-Na finalização do teste, deve-se fazer um PUSH do código alterado para a Branch informada no E-mail.
+
+Realizar um Fork no repositório do projeto e ao finalizar o desenvolvimento do teste enviar o link da conta onde as  alterações foram realiados.
 
 Os requisitos mínimos/esperados para a entrega do desafio estão listados abaixo:
 
