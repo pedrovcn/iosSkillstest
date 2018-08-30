@@ -4,7 +4,7 @@ Aqui, iremos avaliar suas capacidades técnicas referentes à vaga a qual você 
 
 A premissa deste teste é desenvolver um aplicativo onde seja possível realizar um cadastro de usuário, informando E-mail e Senha, e a partir deste cadastro, ser possível entrar na aplicação, realizando um processo de Autenticação.
 
-Realizar um Fork no repositório do projeto e ao finalizar o desenvolvimento do teste enviar o link da conta onde as  alterações foram realiados.
+Realizar um Fork no repositório do projeto e ao finalizar o desenvolvimento do teste enviar o link da conta onde as  alterações foram realizados.
 
 Os requisitos mínimos/esperados para a entrega do desafio estão listados abaixo:
 
