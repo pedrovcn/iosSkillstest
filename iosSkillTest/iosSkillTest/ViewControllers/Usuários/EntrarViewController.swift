@@ -33,12 +33,12 @@ class EntrarViewController: UIViewController {
     
     func formularioValido() -> Bool {
         if emailTextField.isEmpty() {
-            alertaSimples(titulo: "Atenção", mensagem: "Preencha o e-mail")
+            alertaSimples(titulo: "Atenção!", mensagem: "Preencha o e-mail.", handler: nil)
             return false
         }
 
         if senhaTextField.isEmpty() {
-            alertaSimples(titulo: "Atenção", mensagem: "Preencha a senha")
+            alertaSimples(titulo: "Atenção!", mensagem: "Preencha a senha.", handler: nil)
             return false
         }
         

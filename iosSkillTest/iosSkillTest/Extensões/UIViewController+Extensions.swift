@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func alertaSimples(titulo: String?, mensagem: String?) {
+    func alertaSimples(titulo: String?, mensagem: String?, handler: ((UIAlertAction) -> Void)?) {
         let alerta = UIAlertController.init(title: titulo, message: mensagem, preferredStyle: .alert)
-        let okAction =  UIAlertAction.init(title: "OK", style: .default, handler: nil)
+        let okAction =  UIAlertAction.init(title: "OK", style: .default, handler: handler)
         
         alerta.addAction(okAction)
         self.show(alerta, sender: self)

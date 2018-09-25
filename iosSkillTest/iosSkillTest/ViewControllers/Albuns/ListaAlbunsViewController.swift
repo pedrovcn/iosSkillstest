@@ -18,6 +18,7 @@ class ListaAlbunsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.mostrarMensagemTableView(mensagem: "Carregando...")
         getAlbuns()
     }
     
@@ -45,6 +46,7 @@ class ListaAlbunsTableViewController: UITableViewController {
         }
         
         provider.request(.getAlbuns) { result in
+            self.tableView.esconderMensagemTableView()
             switch result {
             case let .success(response):
                 do {
@@ -57,10 +59,10 @@ class ListaAlbunsTableViewController: UITableViewController {
                     self.tableView.reloadData()
                     
                 } catch {
-                    self.alertaSimples(titulo: "Erro", mensagem: "Ocorreu um erro no processamento da requisição.")
+                    self.alertaSimples(titulo: "Erro", mensagem: "Ocorreu um erro no processamento da requisição.", handler: nil)
                 }
             case .failure:
-                self.alertaSimples(titulo: "Erro", mensagem: "Não foi possível enviar a requisicão.")
+                self.alertaSimples(titulo: "Erro", mensagem: "Não foi possível enviar a requisicão.", handler: nil)
             }
         }
     }

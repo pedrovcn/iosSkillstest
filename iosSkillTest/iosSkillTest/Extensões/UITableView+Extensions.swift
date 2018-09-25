@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 extension UITableView {
-    func showMessageOnTableView(message: String) {
+    func mostrarMensagemTableView(mensagem: String) {
         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.bounds.size.width, height: self.bounds.size.height))
         let messageLabel = UILabel(frame: rect)
-        messageLabel.text = message
+        messageLabel.text = mensagem
         messageLabel.textColor = UIColor.lightGray
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = .center;
@@ -23,7 +23,7 @@ extension UITableView {
         self.separatorStyle = .none;
     }
     
-    func hideTableViewMessage() {
+    func esconderMensagemTableView() {
         self.backgroundView = nil
         self.separatorStyle = .singleLine
     }
