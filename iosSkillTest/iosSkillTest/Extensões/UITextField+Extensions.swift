@@ -11,7 +11,7 @@ import UIKit
 
 extension UITextField {
     
-    func isEmpty() -> Bool {
+    func vazio() -> Bool {
         if self.text?.count == 0 {
             return true
         }

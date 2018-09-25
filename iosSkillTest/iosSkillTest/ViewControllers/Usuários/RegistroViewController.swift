@@ -21,6 +21,7 @@ class RegistroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(ocultarTeclado))
         self.view.addGestureRecognizer(tap)
@@ -44,17 +45,24 @@ class RegistroViewController: UIViewController {
     }
     
     func formularioValido() -> Bool {
-        if emailTextField.isEmpty() {
+        if emailTextField.vazio() {
             alertaSimples(titulo: "Atenção", mensagem: "Preencha o e-mail.", handler: nil)
             return false
         }
         
-        if senhaTextField.isEmpty() {
+        if let email = emailTextField.text {
+            if !email.emailValido() {
+                alertaSimples(titulo: "Atenção!", mensagem: "Preencha com um e-mail válido.", handler: nil)
+                return false
+            }
+        }
+        
+        if nomeTextField.vazio() {
             alertaSimples(titulo: "Atenção", mensagem: "Preencha o nome.", handler: nil)
             return false
         }
         
-        if senhaTextField.isEmpty() {
+        if senhaTextField.vazio() {
             alertaSimples(titulo: "Atenção", mensagem: "Preencha a senha.", handler: nil)
             return false
         }

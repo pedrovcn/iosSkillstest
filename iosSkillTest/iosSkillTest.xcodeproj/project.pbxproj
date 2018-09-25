@@ -26,6 +26,7 @@
 		29F2375D2159848C003DB700 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F2375C2159848C003DB700 /* UIViewController+Extensions.swift */; };
 		29F5BDA2215A6D9600B59D4E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F5BDA1215A6D9600B59D4E /* DataManager.swift */; };
 		29F5BDA4215A992900B59D4E /* UsuarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F5BDA3215A992900B59D4E /* UsuarioTableViewCell.swift */; };
+		29F5BDA6215AC43E00B59D4E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F5BDA5215AC43E00B59D4E /* String+Extensions.swift */; };
 		E07403E6F62B3EE20CBBCE65 /* Pods_iosSkillTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE02F687B51C7AEEECB8E6 /* Pods_iosSkillTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		29F2375C2159848C003DB700 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		29F5BDA1215A6D9600B59D4E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		29F5BDA3215A992900B59D4E /* UsuarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioTableViewCell.swift; sourceTree = "<group>"; };
+		29F5BDA5215AC43E00B59D4E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69BE02F687B51C7AEEECB8E6 /* Pods_iosSkillTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosSkillTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8D6AD73567FA138AEC6773 /* Pods-iosSkillTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosSkillTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosSkillTest/Pods-iosSkillTest.release.xcconfig"; sourceTree = "<group>"; };
 		B42DA2C28F140EB54768755F /* Pods-iosSkillTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosSkillTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosSkillTest/Pods-iosSkillTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				29F2375A2159836D003DB700 /* UITextField+Extensions.swift */,
 				29F2375C2159848C003DB700 /* UIViewController+Extensions.swift */,
 				29DF3E972159EC190047999D /* UITableView+Extensions.swift */,
+				29F5BDA5215AC43E00B59D4E /* String+Extensions.swift */,
 			);
 			name = "Extensões";
 			path = "Extensões";
@@ -338,6 +341,7 @@
 				2918F64F215953B7001FEAEE /* ListaUsuariosViewController.swift in Sources */,
 				29DF3E862159D9790047999D /* Album.swift in Sources */,
 				29F2375D2159848C003DB700 /* UIViewController+Extensions.swift in Sources */,
+				29F5BDA6215AC43E00B59D4E /* String+Extensions.swift in Sources */,
 				29DF3E8F2159E0C00047999D /* NibLoadableView.swift in Sources */,
 				2918F6512159638E001FEAEE /* ListaAlbunsViewController.swift in Sources */,
 				2984337421592CCF005EC34B /* iosSkillTest.xcdatamodeld in Sources */,
