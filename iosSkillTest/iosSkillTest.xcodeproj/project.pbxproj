@@ -16,7 +16,12 @@
 		2984337421592CCF005EC34B /* iosSkillTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2984337221592CCF005EC34B /* iosSkillTest.xcdatamodeld */; };
 		2984337621592CD0005EC34B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2984337521592CD0005EC34B /* Assets.xcassets */; };
 		2984337921592CD0005EC34B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2984337721592CD0005EC34B /* LaunchScreen.storyboard */; };
-		29DF3E862159D9790047999D /* RootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DF3E852159D9790047999D /* RootClass.swift */; };
+		29DF3E862159D9790047999D /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DF3E852159D9790047999D /* Album.swift */; };
+		29DF3E882159DC400047999D /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DF3E872159DC400047999D /* AlbumService.swift */; };
+		29DF3E8A2159DEED0047999D /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DF3E892159DEED0047999D /* AlbumTableViewCell.swift */; };
+		29DF3E8D2159E09B0047999D /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DF3E8C2159E09B0047999D /* ReusableView.swift */; };
+		29DF3E8F2159E0C00047999D /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DF3E8E2159E0C00047999D /* NibLoadableView.swift */; };
+		29DF3E982159EC190047999D /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DF3E972159EC190047999D /* UITableView+Extensions.swift */; };
 		29F2375B2159836D003DB700 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F2375A2159836D003DB700 /* UITextField+Extensions.swift */; };
 		29F2375D2159848C003DB700 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F2375C2159848C003DB700 /* UIViewController+Extensions.swift */; };
 		E07403E6F62B3EE20CBBCE65 /* Pods_iosSkillTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE02F687B51C7AEEECB8E6 /* Pods_iosSkillTest.framework */; };
@@ -34,7 +39,12 @@
 		2984337521592CD0005EC34B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2984337821592CD0005EC34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2984337A21592CD0005EC34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29DF3E852159D9790047999D /* RootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootClass.swift; sourceTree = "<group>"; };
+		29DF3E852159D9790047999D /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		29DF3E872159DC400047999D /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
+		29DF3E892159DEED0047999D /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		29DF3E8C2159E09B0047999D /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		29DF3E8E2159E0C00047999D /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		29DF3E972159EC190047999D /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		29F2375A2159836D003DB700 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		29F2375C2159848C003DB700 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		69BE02F687B51C7AEEECB8E6 /* Pods_iosSkillTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosSkillTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,29 +85,100 @@
 		2984336A21592CCF005EC34B /* iosSkillTest */ = {
 			isa = PBXGroup;
 			children = (
-				29F2375921598356003DB700 /* Extensions */,
-				2984336B21592CCF005EC34B /* AppDelegate.swift */,
-				29DF3E852159D9790047999D /* RootClass.swift */,
-				2984336D21592CCF005EC34B /* EntrarViewController.swift */,
-				2918F64C21595023001FEAEE /* RegistroViewController.swift */,
-				2918F64E215953B7001FEAEE /* ListaUsuariosViewController.swift */,
-				2918F6502159638E001FEAEE /* ListaAlbunsViewController.swift */,
-				2984336F21592CCF005EC34B /* Main.storyboard */,
-				2984337521592CD0005EC34B /* Assets.xcassets */,
-				2984337721592CD0005EC34B /* LaunchScreen.storyboard */,
 				2984337A21592CD0005EC34B /* Info.plist */,
+				29DF3E962159E5E40047999D /* Services */,
+				2984336B21592CCF005EC34B /* AppDelegate.swift */,
+				2984337521592CD0005EC34B /* Assets.xcassets */,
+				29DF3E902159E4D50047999D /* Entidades */,
+				29F2375921598356003DB700 /* Extensões */,
 				2984337221592CCF005EC34B /* iosSkillTest.xcdatamodeld */,
+				29DF3E8B2159E08C0047999D /* Protocolos */,
+				29DF3E952159E52F0047999D /* Storyboards */,
+				29DF3E942159E51D0047999D /* TableViewCells */,
+				29DF3E932159E5130047999D /* ViewControllers */,
 			);
 			path = iosSkillTest;
 			sourceTree = "<group>";
 		};
-		29F2375921598356003DB700 /* Extensions */ = {
+		29DF3E8B2159E08C0047999D /* Protocolos */ = {
+			isa = PBXGroup;
+			children = (
+				29DF3E8C2159E09B0047999D /* ReusableView.swift */,
+				29DF3E8E2159E0C00047999D /* NibLoadableView.swift */,
+			);
+			path = Protocolos;
+			sourceTree = "<group>";
+		};
+		29DF3E902159E4D50047999D /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				29DF3E852159D9790047999D /* Album.swift */,
+			);
+			path = Entidades;
+			sourceTree = "<group>";
+		};
+		29DF3E912159E4F30047999D /* Usuários */ = {
+			isa = PBXGroup;
+			children = (
+				2918F64E215953B7001FEAEE /* ListaUsuariosViewController.swift */,
+				2984336D21592CCF005EC34B /* EntrarViewController.swift */,
+				2918F64C21595023001FEAEE /* RegistroViewController.swift */,
+			);
+			name = "Usuários";
+			path = "Usuários";
+			sourceTree = "<group>";
+		};
+		29DF3E922159E5060047999D /* Albuns */ = {
+			isa = PBXGroup;
+			children = (
+				2918F6502159638E001FEAEE /* ListaAlbunsViewController.swift */,
+			);
+			path = Albuns;
+			sourceTree = "<group>";
+		};
+		29DF3E932159E5130047999D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				29DF3E912159E4F30047999D /* Usuários */,
+				29DF3E922159E5060047999D /* Albuns */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		29DF3E942159E51D0047999D /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				29DF3E892159DEED0047999D /* AlbumTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		29DF3E952159E52F0047999D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2984336F21592CCF005EC34B /* Main.storyboard */,
+				2984337721592CD0005EC34B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		29DF3E962159E5E40047999D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				29DF3E872159DC400047999D /* AlbumService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		29F2375921598356003DB700 /* Extensões */ = {
 			isa = PBXGroup;
 			children = (
 				29F2375A2159836D003DB700 /* UITextField+Extensions.swift */,
 				29F2375C2159848C003DB700 /* UIViewController+Extensions.swift */,
+				29DF3E972159EC190047999D /* UITableView+Extensions.swift */,
 			);
-			path = Extensions;
+			name = "Extensões";
+			path = "Extensões";
 			sourceTree = "<group>";
 		};
 		CBCC6D957249977C70AB30D0 /* Pods */ = {
@@ -195,6 +276,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-iosSkillTest/Pods-iosSkillTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -203,6 +285,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -238,11 +321,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				29F2375B2159836D003DB700 /* UITextField+Extensions.swift in Sources */,
+				29DF3E982159EC190047999D /* UITableView+Extensions.swift in Sources */,
 				2984336E21592CCF005EC34B /* EntrarViewController.swift in Sources */,
 				2918F64D21595023001FEAEE /* RegistroViewController.swift in Sources */,
+				29DF3E8D2159E09B0047999D /* ReusableView.swift in Sources */,
+				29DF3E8A2159DEED0047999D /* AlbumTableViewCell.swift in Sources */,
+				29DF3E882159DC400047999D /* AlbumService.swift in Sources */,
 				2918F64F215953B7001FEAEE /* ListaUsuariosViewController.swift in Sources */,
-				29DF3E862159D9790047999D /* RootClass.swift in Sources */,
+				29DF3E862159D9790047999D /* Album.swift in Sources */,
 				29F2375D2159848C003DB700 /* UIViewController+Extensions.swift in Sources */,
+				29DF3E8F2159E0C00047999D /* NibLoadableView.swift in Sources */,
 				2918F6512159638E001FEAEE /* ListaAlbunsViewController.swift in Sources */,
 				2984337421592CCF005EC34B /* iosSkillTest.xcdatamodeld in Sources */,
 				2984336C21592CCF005EC34B /* AppDelegate.swift in Sources */,

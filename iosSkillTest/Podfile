@@ -8,5 +8,5 @@ target 'iosSkillTest' do
   # Pods for iosSkillTest
   pod 'Moya'
   pod 'AlamofireObjectMapper'
-#  pod 'Kingfisher'
+  pod 'Kingfisher'
 end
