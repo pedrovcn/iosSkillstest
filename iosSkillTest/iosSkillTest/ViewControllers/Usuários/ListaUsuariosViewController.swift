@@ -20,15 +20,21 @@ class ListaUsuariosViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        carregarUsuarios()
+        carregarUsuarios(filtrarPor: nil)
     }
     
-    func carregarUsuarios() {
+    func carregarUsuarios(filtrarPor nome: String?) {
         if dataManager == nil {
             dataManager = DataManager()
         }
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Usuario")
+        
+        if let nome = nome {
+            let atributo = "nome"
+            fetchRequest.predicate = NSPredicate(format: "%K contains[c] %@", atributo, nome)
+        }
+        
         let context = dataManager.persistentContainer.viewContext
         do {
             let results = try context.fetch(fetchRequest)
@@ -41,6 +47,12 @@ class ListaUsuariosViewController: UIViewController {
         }
     }
 
+}
+
+extension ListaUsuariosViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
 }
 
 extension ListaUsuariosViewController: UITableViewDataSource {
@@ -69,5 +81,25 @@ extension ListaUsuariosViewController: UITableViewDelegate {
 }
 
 extension ListaUsuariosViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count == 0 {
+            carregarUsuarios(filtrarPor: nil)
+        } else {
+            carregarUsuarios(filtrarPor: searchText)
+        }
+    }
     
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        return (searchBar.text?.count)! + text.count - range.length > 50 ? false : true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        carregarUsuarios(filtrarPor: nil)
+        self.view.endEditing(true)
+    }
 }

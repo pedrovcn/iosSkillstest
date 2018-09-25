@@ -248,9 +248,13 @@
                                     <outlet property="delegate" destination="sHp-ME-0Lx" id="qAK-6Z-7Oq"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eg9-77-DUk">
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Busque por nome" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eg9-77-DUk">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="sHp-ME-0Lx" id="mcb-eA-kpc"/>
                                 </connections>
