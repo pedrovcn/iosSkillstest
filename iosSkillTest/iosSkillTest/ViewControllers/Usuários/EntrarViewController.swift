@@ -71,7 +71,7 @@ class EntrarViewController: UIViewController {
                 let senha = usuario.value(forKey: "senha") as! String
                 
                 if senha == self.senhaTextField.text {
-                    self.performSegue(withIdentifier: "entrar", sender: self)
+                    self.performSegue(withIdentifier: "entrar", sender: usuario)
                 } else {
                     alertaSimples(titulo: "Atenção!", mensagem: "Senha incorreta.", handler: nil)
                 }
@@ -87,5 +87,20 @@ class EntrarViewController: UIViewController {
     
     @objc func ocultarTeclado() {
         self.view.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "entrar" {
+            let tabbarController = segue.destination as! UITabBarController
+            let navigationController = tabbarController.viewControllers?[0] as! UINavigationController
+            let listaViewController = navigationController.topViewController as! ListaUsuariosViewController
+            
+            let usuario = sender as! NSManagedObject
+            let nomeUsuario = usuario.value(forKey: "nome")
+            
+            listaViewController.title = "Olá \(nomeUsuario ?? "Usuário")"
+            navigationController.title = "Home"
+            
+        }
     }
 }
