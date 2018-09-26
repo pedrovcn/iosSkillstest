@@ -36,7 +36,6 @@ class RegistroViewController: UIViewController {
         
         if formularioValido() {
             salvarUsuario() { (titulo, mensagem) in
-                
                 alertaSimples(titulo: titulo, mensagem: mensagem) { _ in
                     self.fecharRegistro(self)
                 }

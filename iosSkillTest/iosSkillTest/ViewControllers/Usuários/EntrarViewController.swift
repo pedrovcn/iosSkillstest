@@ -99,6 +99,7 @@ class EntrarViewController: UIViewController {
             let nomeUsuario = usuario.value(forKey: "nome")
             
             listaViewController.title = "Olá \(nomeUsuario ?? "Usuário")"
+            listaViewController.usuarioLogado = usuario
             navigationController.title = "Home"
             
         }

@@ -15,6 +15,7 @@ class ListaUsuariosViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var dataManager: DataManager!
+    var usuarioLogado: NSManagedObject!
     
     var usuarios: Array<NSManagedObject>!
     
@@ -40,7 +41,7 @@ class ListaUsuariosViewController: UIViewController {
             let results = try context.fetch(fetchRequest)
             usuarios = results as? [NSManagedObject]
             tableView.reloadData()
-            
+
         } catch let error as NSError {
             alertaSimples(titulo: "Ops!", mensagem: "Ocorreu um erro ao buscar as informações.", handler: nil)
             print("Erro ao buscar: \(error), \(error.userInfo)")
@@ -79,6 +80,34 @@ extension ListaUsuariosViewController: UITableViewDataSource {
 extension ListaUsuariosViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let usuario = usuarios[indexPath.row]
+        let email = usuario.value(forKey: "email") as! String
+        let nome = usuario.value(forKey: "nome") as! String
+        let emailLogado = usuarioLogado.value(forKey: "email") as! String
+        
+        if editingStyle == .delete {
+            if email == emailLogado {
+                alertaSimples(titulo: "Ops!", mensagem: "Você não pode excluir seu próprio usuário!", handler: nil)
+            } else {
+                alertaConfirmacao(titulo: "Alerta!", mensagem: "Deseja excluir o usuário \(nome)") { _ in
+                    let managedContext = self.dataManager.persistentContainer.viewContext
+                    managedContext.delete(usuario)
+                    
+                    do {
+                        try managedContext.save()
+                        self.usuarios.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                        tableView.reloadData()
+                    } catch {
+                        self.alertaSimples(titulo: "Ops!", mensagem: "Não foi possível salvar as alterações na nase", handler: nil)
+                    }
+                }
+            }
+        }
     }
 }
 
