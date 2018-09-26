@@ -81,6 +81,13 @@ class ListaUsuariosViewController: UIViewController {
         if segue.identifier == "editar" {
             let vc = segue.destination as! RegistroViewController
             vc.usuario = sender as? NSManagedObject
+            let nomeUsuario = vc.usuario?.value(forKey: "nome") as! String
+            vc.instrucao = "Editando \(nomeUsuario)"
+        }
+        
+        if segue.identifier == "novo" {
+            let vc = segue.destination as! RegistroViewController
+            vc.instrucao = "Cadastrando um novo usuário"
         }
     }
 

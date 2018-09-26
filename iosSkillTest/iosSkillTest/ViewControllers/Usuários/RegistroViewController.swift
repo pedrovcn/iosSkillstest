@@ -10,14 +10,15 @@ import UIKit
 import CoreData
 
 class RegistroViewController: UIViewController {
-
-    var usuarioLogado = true
+    
+    var instrucao: String?
     var usuario: NSManagedObject?
     var dataManager: DataManager!
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
+    @IBOutlet weak var instrucoesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ class RegistroViewController: UIViewController {
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(ocultarTeclado))
         self.view.addGestureRecognizer(tap)
+        
+        if let instrucao = instrucao {
+            instrucoesLabel.text = instrucao
+        }
         
         if usuario != nil {
             emailTextField.text = usuario?.value(forKey: "email") as? String

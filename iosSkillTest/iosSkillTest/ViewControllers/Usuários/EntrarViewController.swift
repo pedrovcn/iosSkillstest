@@ -103,5 +103,10 @@ class EntrarViewController: UIViewController {
             navigationController.title = "Home"
             
         }
+        
+        if segue.identifier == "novo" {
+            let vc = segue.destination as! RegistroViewController
+            vc.instrucao = "Faça seu cadastro \nÉ fácil e rápido"
+        }
     }
 }
