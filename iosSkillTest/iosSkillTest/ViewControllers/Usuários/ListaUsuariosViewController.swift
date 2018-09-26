@@ -25,9 +25,7 @@ class ListaUsuariosViewController: UIViewController {
     }
     
     func carregarUsuarios(filtrarPor nome: String?) {
-        if dataManager == nil {
-            dataManager = DataManager()
-        }
+        dataManager = DataManager()
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Usuario")
         
