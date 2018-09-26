@@ -134,7 +134,7 @@ extension ListaUsuariosViewController: UITableViewDelegate {
             self.excluirUsuario(at: indexPath)
         }
         
-        return [acaoEditar, acaoExcluir]
+        return [acaoExcluir, acaoEditar]
     }
 }
 
