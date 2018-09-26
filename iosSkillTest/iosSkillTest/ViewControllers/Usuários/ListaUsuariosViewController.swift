@@ -47,6 +47,42 @@ class ListaUsuariosViewController: UIViewController {
             print("Erro ao buscar: \(error), \(error.userInfo)")
         }
     }
+    
+    func editarUsuario(at indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "editar", sender: usuarios[indexPath.row])
+    }
+    
+    func excluirUsuario(at indexPath: IndexPath) {
+        let usuario = self.usuarios[indexPath.row]
+        let email = usuario.value(forKey: "email") as! String
+        let nome = usuario.value(forKey: "nome") as! String
+        let emailLogado = self.usuarioLogado.value(forKey: "email") as! String
+        
+        if email == emailLogado {
+            self.alertaSimples(titulo: "Ops!", mensagem: "Você não pode excluir seu próprio usuário!", handler: nil)
+        } else {
+            self.alertaConfirmacao(titulo: "Alerta!", mensagem: "Deseja excluir o usuário \(nome)") { _ in
+                let managedContext = self.dataManager.persistentContainer.viewContext
+                managedContext.delete(usuario)
+                
+                do {
+                    try managedContext.save()
+                    self.usuarios.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.reloadData()
+                } catch {
+                    self.alertaSimples(titulo: "Ops!", mensagem: "Não foi possível salvar as alterações na base", handler: nil)
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editar" {
+            let vc = segue.destination as! RegistroViewController
+            vc.usuario = sender as? NSManagedObject
+        }
+    }
 
 }
 
@@ -82,32 +118,18 @@ extension ListaUsuariosViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        let usuario = usuarios[indexPath.row]
-        let email = usuario.value(forKey: "email") as! String
-        let nome = usuario.value(forKey: "nome") as! String
-        let emailLogado = usuarioLogado.value(forKey: "email") as! String
-        
-        if editingStyle == .delete {
-            if email == emailLogado {
-                alertaSimples(titulo: "Ops!", mensagem: "Você não pode excluir seu próprio usuário!", handler: nil)
-            } else {
-                alertaConfirmacao(titulo: "Alerta!", mensagem: "Deseja excluir o usuário \(nome)") { _ in
-                    let managedContext = self.dataManager.persistentContainer.viewContext
-                    managedContext.delete(usuario)
-                    
-                    do {
-                        try managedContext.save()
-                        self.usuarios.remove(at: indexPath.row)
-                        tableView.deleteRows(at: [indexPath], with: .fade)
-                        tableView.reloadData()
-                    } catch {
-                        self.alertaSimples(titulo: "Ops!", mensagem: "Não foi possível salvar as alterações na nase", handler: nil)
-                    }
-                }
-            }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let acaoEditar = UITableViewRowAction(style: .default, title: "Editar") { (action, indexPath) in
+            self.editarUsuario(at: indexPath)
         }
+        
+        acaoEditar.backgroundColor = UIColor.blue
+        
+        let acaoExcluir = UITableViewRowAction(style: .destructive, title: "Excluir") { (action, indexPath) in
+            self.excluirUsuario(at: indexPath)
+        }
+        
+        return [acaoEditar, acaoExcluir]
     }
 }
 

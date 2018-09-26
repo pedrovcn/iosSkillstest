@@ -12,7 +12,7 @@ import CoreData
 class RegistroViewController: UIViewController {
 
     var usuarioLogado = true
-    var usuario: NSObject?
+    var usuario: NSManagedObject?
     var dataManager: DataManager!
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,6 +25,13 @@ class RegistroViewController: UIViewController {
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(ocultarTeclado))
         self.view.addGestureRecognizer(tap)
+        
+        if usuario != nil {
+            emailTextField.text = usuario?.value(forKey: "email") as? String
+            nomeTextField.text = usuario?.value(forKey: "nome") as? String
+            senhaTextField.text = usuario?.value(forKey: "senha") as? String
+            emailTextField.isEnabled = false
+        }
     }
     
     @IBAction func fecharRegistro(_ sender: Any) {
@@ -75,8 +82,26 @@ class RegistroViewController: UIViewController {
         }
         
         let managedContext = dataManager.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Usuario", in: managedContext)!
-        let usuario = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        var usuario: NSManagedObject!
+        
+        if self.usuario != nil {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Usuario")
+            let atributo = "email"
+            fetchRequest.predicate = NSPredicate(format: "%K == %@", atributo, emailTextField.text ?? "")
+            
+            do {
+                let results = try managedContext.fetch(fetchRequest)
+                let usuarios = results as? [NSManagedObject]
+                
+                usuario = usuarios?.first
+            } catch {
+                alertaSimples(titulo: "Ops!", mensagem: "Usuário não encontrado", handler: nil)
+            }
+        } else {
+            let entity = NSEntityDescription.entity(forEntityName: "Usuario", in: managedContext)!
+            usuario = NSManagedObject(entity: entity, insertInto: managedContext)
+        }
         
         usuario.setValue(nomeTextField.text, forKey: "nome")
         usuario.setValue(emailTextField.text, forKey: "email")

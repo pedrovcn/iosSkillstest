@@ -282,6 +282,7 @@
                     <connections>
                         <outlet property="searchBar" destination="eg9-77-DUk" id="bd5-K9-wTG"/>
                         <outlet property="tableView" destination="mtG-iS-bp1" id="n6j-S0-qND"/>
+                        <segue destination="Taa-gq-cJt" kind="presentation" identifier="editar" id="rhJ-T8-MHR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qG-Ze-jpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,6 +329,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="si7-w3-Qgb"/>
+        <segue reference="rhJ-T8-MHR"/>
     </inferredMetricsTieBreakers>
 </document>
